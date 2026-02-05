@@ -4,6 +4,8 @@ import TopCourse from "../../components/TopCourse";
 import { Cpu, BadgeCheck, Presentation } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar";
+import Clients from "../../components/Clients";
+import CareerShowcase from "../../components/CareerShowcase";
 
 const Home = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -25,15 +27,15 @@ const Home = () => {
 
   return (
     <div className="relative">
-                  <Navbar />
+      <Navbar />
 
       <div className="relative">
         <Hero />
         <TopCourse />
       </div>
 
-      <div>
-        <section className="bg-[#f6f5fb]">
+      <div className="px-6 md:px-12 lg:px-20 bg-[#f6f5fb]">
+        <section>
           {/* Top Section */}
           <div className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
             {/* LEFT CONTENT */}
@@ -52,7 +54,7 @@ const Home = () => {
               </p>
 
               <button
-                className="mt-8 inline-flex items-center gap-2 border-2 border-purple-600 text-purple-600 px-6 py-3 rounded-lg font-semibold hover:bg-purple-600 hover:text-white transition"
+                className="mt-8 inline-flex items-center gap-2 border-2 border-[#44308F] text-[#44308F] px-6 py-3 rounded-lg font-semibold hover:bg-[#44308F] hover:text-white transition"
                 onClick={() => {
                   navigate("/enroll");
                 }}
@@ -67,7 +69,7 @@ const Home = () => {
                 {/* IT Training */}
                 <div className="row-span-1">
                   <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
-                    <Cpu size={36} className="text-purple-600 mb-4" />
+                    <Cpu size={36} className="text-[#44308F] mb-4" />
                     <h3 className="font-semibold text-gray-900">IT Training</h3>
                   </div>
                 </div>
@@ -75,7 +77,7 @@ const Home = () => {
                 {/* Certificate */}
                 <div className="mt-16">
                   <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
-                    <BadgeCheck size={36} className="text-purple-600 mb-4" />
+                    <BadgeCheck size={36} className="text-[#44308F] mb-4" />
                     <h3 className="font-semibold text-gray-900">
                       Certificate Preparation
                     </h3>
@@ -85,7 +87,7 @@ const Home = () => {
                 {/* Corporate */}
                 <div>
                   <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition">
-                    <Presentation size={36} className="text-purple-600 mb-4" />
+                    <Presentation size={36} className="text-[#44308F] mb-4" />
                     <h3 className="font-semibold text-gray-900">
                       Corporate Workshop
                     </h3>
@@ -94,33 +96,33 @@ const Home = () => {
 
                 {/* Connector Lines */}
                 <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
-                  <div className="w-40 h-40 border-l-4 border-r-4 border-purple-600 opacity-30 rounded-full"></div>
+                  <div className="w-40 h-40 border-l-4 border-r-4 border-[#44308F] opacity-30 rounded-full"></div>
                 </div>
               </div>
             </div>
           </div>
 
           {/* STATS SECTION */}
-          <div className="bg-[#e9e7f1] py-10">
+          <div className="bg-[#e9e7f1] py-10 px-6 md:px-12 lg:px-20">
             <div className="max-w-7xl text-md space-x-5 p-5 font-semibold mx-auto grid grid-cols-2 md:grid-cols-5 gap-6 text-center px-6">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold text-purple-600">5K+</h1>
+                <h1 className="text-3xl font-bold text-[#44308F]">5K+</h1>
                 <h1 className="text-gray-700">Student Graduated</h1>
               </div>
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold text-purple-600">30+</h1>
+                <h1 className="text-3xl font-bold text-[#44308F]">30+</h1>
                 <h1 className="text-gray-700">Industry Mentors</h1>
               </div>
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold text-purple-600">500+</h1>
+                <h1 className="text-3xl font-bold text-[#44308F]">500+</h1>
                 <h1 className="text-gray-700">Interview Coding Questions</h1>
               </div>
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold text-purple-600">1:1</h1>
+                <h1 className="text-3xl font-bold text-[#44308F]">1:1</h1>
                 <h1 className="text-gray-700">Career Support</h1>
               </div>
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold text-purple-600">50+</h1>
+                <h1 className="text-3xl font-bold text-[#44308F]">50+</h1>
                 <h1 className="text-gray-700">Hiring Partners</h1>
               </div>
             </div>
@@ -129,9 +131,9 @@ const Home = () => {
       </div>
 
       {/* Placement Support Section */}
-      <section className="bg-gradient-to-r from-gray-50 to-gray-100 py-20 px-6 lg:px-20">
+      <section className="bg-linear-to-r from-gray-50 to-gray-100 py-20 px-6 md:px-12 lg:px-20">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative">
+          <div className="relative ">
             <img
               src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=700&fit=crop"
               alt="Professional woman"
@@ -170,7 +172,7 @@ const Home = () => {
                 alt="Google"
                 className="h-10"
               />
-              <span className="text-blue-600 font-bold text-2xl">Behance</span>
+              <span className="text-[#44308F] font-bold text-2xl">Behance</span>
               <img
                 src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
                 alt="Google"
@@ -196,7 +198,7 @@ const Home = () => {
           {[1, 2].map((item) => (
             <div
               key={item}
-              className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-10 relative overflow-hidden"
+              className="bg-linear-to-br from-blue-50 to-blue-50 rounded-2xl p-10 relative overflow-hidden"
             >
               <div className="flex items-start justify-between mb-6">
                 <div className="flex items-center gap-3">
@@ -288,142 +290,10 @@ const Home = () => {
       </section>
 
       {/* Clients Section */}
-      <section className="py-16 px-6 lg:px-20 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">Our Clients</h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center mb-8">
-            {[...Array(8)].map((_, i) => (
-              <div key={i} className="flex justify-center">
-                {i % 4 === 0 && (
-                  <img
-                    src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
-                    alt="Google"
-                    className="h-8"
-                  />
-                )}
-                {i % 4 === 1 && (
-                  <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    P
-                  </div>
-                )}
-                {i % 4 === 2 && (
-                  <div className="flex gap-1">
-                    <div className="w-2 h-8 bg-red-500"></div>
-                    <div className="w-2 h-8 bg-green-500"></div>
-                    <div className="w-2 h-8 bg-blue-500"></div>
-                    <div className="w-2 h-8 bg-yellow-500"></div>
-                  </div>
-                )}
-                {i % 4 === 3 && (
-                  <span className="text-blue-600 font-bold text-xl">
-                    Behance
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center">
-            {[...Array(8)].map((_, i) => (
-              <div key={i} className="flex justify-center">
-                {i % 4 === 0 && (
-                  <img
-                    src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
-                    alt="Google"
-                    className="h-8"
-                  />
-                )}
-                {i % 4 === 1 && (
-                  <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                    P
-                  </div>
-                )}
-                {i % 4 === 2 && (
-                  <div className="flex gap-1">
-                    <div className="w-2 h-8 bg-red-500"></div>
-                    <div className="w-2 h-8 bg-green-500"></div>
-                    <div className="w-2 h-8 bg-blue-500"></div>
-                    <div className="w-2 h-8 bg-yellow-500"></div>
-                  </div>
-                )}
-                {i % 4 === 3 && (
-                  <span className="text-blue-600 font-bold text-xl">
-                    Behance
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Clients />
 
       {/* Testimonial Section */}
-      <section className="py-20 px-6 lg:px-20 bg-gradient-to-r from-gray-50 to-gray-100">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-gray-600 mb-4">Seize the future</p>
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-                Showcasing Careers Launched from Our Institute
-              </h2>
-              <p className="text-gray-600 mb-8">
-                Secure your career with Sipalaya's cutting-edge resources and
-                transformative learning experiences.
-              </p>
-              <button
-                className="bg-indigo-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-800 transition"
-                onClick={() => {
-                  navigate("/enroll");
-                }}
-              >
-                Enroll Now
-              </button>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="flex">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop"
-                  alt="Testimonial"
-                  className="w-1/3 object-cover"
-                />
-                <div className="p-8 bg-purple-50 flex-1">
-                  <p className="text-gray-700 mb-6 leading-relaxed">
-                    {testimonials[currentTestimonial].text}
-                  </p>
-                  <h3 className="text-indigo-700 font-bold text-lg mb-1">
-                    {testimonials[currentTestimonial].role}
-                  </h3>
-                  <p className="text-gray-600">
-                    {testimonials[currentTestimonial].name}
-                  </p>
-                </div>
-              </div>
-              <div className="flex justify-center gap-4 py-6 bg-white">
-                <button
-                  onClick={() =>
-                    setCurrentTestimonial(Math.max(0, currentTestimonial - 1))
-                  }
-                  className="w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition"
-                >
-                  ←
-                </button>
-                <button
-                  onClick={() =>
-                    setCurrentTestimonial(
-                      Math.min(testimonials.length - 1, currentTestimonial + 1),
-                    )
-                  }
-                  className="w-12 h-12 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition"
-                >
-                  →
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CareerShowcase />
     </div>
   );
 };

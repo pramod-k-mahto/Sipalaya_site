@@ -4,123 +4,102 @@ import logo from "../assets/images/logo.png";
 
 const navLinks = [
   { path: "/courses", label: "Courses" },
-  { path: "/career-opportunity", label: "Career Opportunity" },
+  { path: "/career-opportunity", label: "Career" },
   { path: "/blogs", label: "Blogs" },
-  { path: "/guidance", label: "Seeking Guidance" },
-  { path: "/contact", label: "Contact Us" },
+  { path: "/guidance", label: "Guidance" },
+  { path: "/contact", label: "Contact" },
 ];
 
 const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
 
   return (
-    <header className=" absolute w-full  z-50 text-md ">
-      <div className="flex justify-between py-5 px-4 md:px-8 lg:px-12 items-center">
+    <header className="absolute top-0 left-0 w-full z-50">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+        
         {/* Logo */}
-        <div>
-          <img
-            src={logo}
-            alt="Company Logo"
-            className="w-24 md:w-32 lg:w-34 cursor-pointer"
-            onClick={() => {
-              navigate("/");
-            }}
-          />
-        </div>
+        <img
+          src={logo}
+          alt="Logo"
+          className="w-28 cursor-pointer"
+          onClick={() => navigate("/")}
+        />
 
-        {/* Desktop Navigation */}
-        <nav
-          className="hidden lg:flex gap-6 xl:gap-9"
-          aria-label="Main Navigation"
-        >
+        {/* Desktop Nav */}
+        <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map(({ path, label }) => (
             <NavLink
               key={path}
               to={path}
-              className="text-base xl:text-[22px] text-[#F4F4F4] hover:text-white transition-colors"
+              className={({ isActive }) =>
+                `text-base transition ${
+                  isActive
+                    ? "text-white font-medium"
+                    : "text-white/80 hover:text-white"
+                }`
+              }
             >
               {label}
             </NavLink>
           ))}
         </nav>
 
-        {/* Desktop Buttons */}
-        <div className="hidden lg:flex text-base xl:text-[22px] gap-2.5 items-center">
+        {/* Desktop Actions */}
+        <div className="hidden lg:flex items-center gap-3">
           <NavLink
             to="/enroll"
-            className="border py-2 px-4 xl:px-5 rounded-lg border-[#FFFFFF] text-[#FFFFFF] whitespace-nowrap hover:bg-white hover:text-[#5E3AE3] transition-colors"
+            className="px-4 py-2 rounded-lg border border-white/70 text-white text-sm hover:bg-white hover:text-[#5E3AE3] transition"
           >
             Enroll Now
           </NavLink>
-          <button className="border py-2 px-4 xl:px-5 rounded-lg bg-[#E8BB0E] text-[#FFFFFF] whitespace-nowrap hover:bg-[#d4a80d] transition-colors">
+
+          <button className="px-4 py-2 rounded-lg bg-[#E8BB0E] text-white text-sm hover:bg-[#d4a80d] transition">
             Start Projects
           </button>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden text-white p-2"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle menu"
+          className="lg:hidden text-white"
+          onClick={() => setIsOpen(!isOpen)}
         >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            {isMobileMenuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {isOpen ? (
+              <path strokeWidth={2} strokeLinecap="round" d="M6 18L18 6M6 6l12 12" />
             ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
+              <path strokeWidth={2} strokeLinecap="round" d="M4 6h16M4 12h16M4 18h16" />
             )}
           </svg>
         </button>
       </div>
 
-      {/* Mobile Navigation Menu */}
-      {isMobileMenuOpen && (
-        <div className="lg:hidden bg-[#44308F] px-4 py-4 space-y-3">
-          <nav
-            className="flex flex-col space-y-3"
-            aria-label="Mobile Navigation"
-          >
-            {navLinks.map(({ path, label }) => (
-              <NavLink
-                key={path}
-                to={path}
-                className="text-lg text-[#F4F4F4] py-2 hover:text-white transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {label}
-              </NavLink>
-            ))}
-          </nav>
-          <div className="flex flex-col gap-3 pt-3 border-t border-[#5E3AE3]">
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="lg:hidden bg-[#4B35C8] backdrop-blur-md px-6 py-6 space-y-4">
+          {navLinks.map(({ path, label }) => (
+            <NavLink
+              key={path}
+              to={path}
+              onClick={() => setIsOpen(false)}
+              className="block text-white/90 text-lg hover:text-white"
+            >
+              {label}
+            </NavLink>
+          ))}
+
+          <div className="pt-4 border-t border-white/20 space-y-3">
             <NavLink
               to="/enroll"
-              className="text-center border py-2 px-4 rounded-lg border-[#FFFFFF] text-[#FFFFFF] hover:bg-white hover:text-[#5E3AE3] transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => setIsOpen(false)}
+              className="block text-center border border-white text-white py-2 rounded-lg hover:bg-white hover:text-[#5E3AE3] transition"
             >
               Enroll Now
             </NavLink>
+
             <button
-              className="border py-2 px-4 rounded-lg bg-[#E8BB0E] text-[#FFFFFF] hover:bg-[#d4a80d] transition-colors"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => setIsOpen(false)}
+              className="w-full py-2 rounded-lg bg-[#E8BB0E] text-white hover:bg-[#d4a80d] transition"
             >
               Start Projects
             </button>
