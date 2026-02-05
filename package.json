@@ -14,11 +14,14 @@
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/react-query": "^5.90.17",
     "lucide-react": "^0.562.0",
+    "motion": "^12.31.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-icons": "^5.5.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.12.0",
+    "react-slick": "^0.31.0",
+    "slick-carousel": "^1.8.1",
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {

@@ -2,77 +2,73 @@ import { useNavigate } from "react-router-dom";
 
 const CourseCard = ({ course }) => {
   const navigate = useNavigate();
+
   return (
-    <div
-      className="w-85 bg-purple-50   rounded-2xl shadow-lg overflow-hidden hover:-translate-y-3 transition-transform duration-300
- "
-    >
-      {/* Top Section */}
-      <div className="relative bg-white p-4">
+    <div className="group w-85 h-110 bg-white rounded-2xl border-2 border-gray-200 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col overflow-hidden">
+      {/* Image */}
+      <div className="relative h-44 bg-slate-50">
+        <img
+          src={course.image}
+          alt={course.title}
+          className="w-full h-full object-cover"
+        />
+
         {/* Tags */}
-        <div className="flex gap-2 mb-3">
-          <span className="px-3 py-1 text-sm  border border-purple-500 text-purple-600 rounded-full ">
-            {course?.category}
+        <div className="absolute top-4 left-4 flex gap-2">
+          <span className="px-3 py-1 text-xs rounded-full bg-indigo-100 text-[#44308F]">
+            {course.category}
           </span>
-          <span className="px-3 border py-1 text-sm  border-purple-500 text-purple-600 rounded-full">
-            {course?.duration}
+          <span className="px-3 py-1 text-xs rounded-full bg-slate-200 text-slate-700">
+            {course.level}
           </span>
-        </div>
-
-        {/* Title */}
-
-        {/* Image */}
-        <div className="flex relative h-32   justify-center mt-4">
-          <h3 className="font-bold  absolute z-50  text-center  w-40 -right-5 text-lg text-gray-900">
-            {course?.title}
-          </h3>
-          <img
-            src={course?.image}
-            alt="Flutter App"
-            className="w-full hover:scale-105 transition-transform duration-300 "
-          />
         </div>
       </div>
 
-      {/* Bottom Section */}
-      <div className=" h-64 flex flex-col gap-5  p-3   ">
-        <div className="h-28 space-y-3">
-          <h2 className="text-2xl font-bold text-purple-700">
-            {course?.title}
-          </h2>
+      {/* Content */}
+      <div className="flex-1 p-5 flex flex-col">
+        <h3 className="text-lg font-semibold text-slate-900 line-clamp-2">
+          {course.title}
+        </h3>
 
-          <p className="text-xl font-semibold text-gray-800 ">
-            Rs.{course?.price}
-          </p>
+        <p className="mt-1 text-sm text-slate-600 line-clamp-2">
+          {course.description}
+        </p>
+
+        {/* Meta */}
+        <div className="mt-3 flex items-center justify-between text-sm text-slate-600">
+          <span>⭐ {course.rating}</span>
         </div>
+
+        <p className="mt-3 text-xl font-bold text-[#44308F]">
+          Rs. {course.price}
+        </p>
+
+        <div className="flex-1" />
 
         {/* Instructor */}
-        <div className="flex h-12  items-center gap-3">
+        <div className="flex items-center gap-3 text-sm text-slate-600 mb-4">
           <img
-            src={course?.instructorImage}
-            alt="Instructor"
-            className="w-10 h-10 rounded-full"
+            src={course.instructorImage}
+            alt={course.instructor}
+            className="w-8 h-8 rounded-full"
           />
-          <span className="text-gray-700">{course?.instructor}</span>
+          <span className="truncate">{course.instructor}</span>
         </div>
 
-        {/* Buttons */}
-        <div className="flex    items-center justify-between ">
+        {/* Actions */}
+        <div className="flex items-center justify-between">
           <button
-            className="bg-purple-700 text-white px-5 py-2 rounded-lg hover:bg-purple-800 transition"
-            onClick={() => {
-              navigate("/enroll");
-            }}
+            onClick={() => navigate("/enroll")}
+            className="px-4 py-2 rounded-lg bg-[#44308F] text-white text-sm font-medium hover:bg-[#44308F] transition"
           >
-            Enroll Now
+            Enroll
           </button>
+
           <button
-            onClick={() => {
-              navigate("/courseDetail");
-            }}
-            className="text-purple-700 font-medium flex items-center gap-1 hover:underline"
+            onClick={() => navigate("/courseDetail")}
+            className="text-sm font-medium text-[#44308F] hover:underline"
           >
-            View Details →
+            Details →
           </button>
         </div>
       </div>
