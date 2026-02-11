@@ -6,8 +6,8 @@ import { Outlet } from "react-router-dom";
 const PublicLayout = () => {
   return (
     <div>
+      <Navbar />
       <Outlet />
-
       <Footer />
     </div>
   );

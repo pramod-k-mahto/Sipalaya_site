@@ -42,7 +42,7 @@ const Career = () => {
     <div className=" border border-white  bg-[#44308F]">
       <Navbar />
 
-      <div className="min-h-screen  mt-24 bg-gradient-to-br  from-gray-50 to-blue-50">
+      <div className="min-h-screen  mt-24 bg-linear-to-br  from-gray-50 to-blue-50">
         {/* CTA */}
         <section className="bg-[#44308F] text-white px-4 py-16 sm:py-20 text-center">
           <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-8 leading-snug">

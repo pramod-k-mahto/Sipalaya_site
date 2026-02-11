@@ -27,28 +27,28 @@ const Footer = () => {
 
   return (
     <footer className="bg-[#44308F] py-6 md:py-8 px-4 md:px-6 lg:px-8">
-      <div className="bg-[#FFFFFF33] p-6 md:p-10 lg:p-12 text-base md:text-lg lg:text-[22px] text-[#E3E0EF] rounded-xl">
+      <div className="bg-[#FFFFFF33] p-6 md:p-10 lg:p-12 text-base md:text-lg  text-[#E3E0EF] rounded-xl">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8 lg:mb-12">
           {/* Company Info */}
           <div className="flex flex-col gap-4">
             <img src={logo} alt="Company Logo" className="w-40 md:w-48" />
-            <p className="text-sm md:text-base lg:text-[22px]">
-              At Sipalaya, we're here to help you thrive. Learn in-demand skills,
-              get hired, and advance your career with us. Join today and start
-              your journey to success.
+            <p className="text-sm md:text-base ">
+              At Sipalaya, we're here to help you thrive. Learn in-demand
+              skills, get hired, and advance your career with us. Join today and
+              start your journey to success.
             </p>
           </div>
 
           {/* Links Column 1 */}
           <div className="flex flex-col gap-4">
-            <p className="font-bold text-xl md:text-2xl lg:text-3xl">Links</p>
+            <p className="font-bold text-xl md:text-2xl ">Links</p>
             <nav className="flex flex-col gap-2">
               {navLinks.slice(0, 3).map(({ path, label }) => (
                 <Link
                   key={path}
                   to={path}
-                  className="text-[#F4F4F4] hover:text-white transition-colors text-sm md:text-base lg:text-[22px]"
+                  className="text-[#F4F4F4] hover:text-white transition-colors text-sm md:text-base "
                 >
                   {label}
                 </Link>
@@ -58,15 +58,13 @@ const Footer = () => {
 
           {/* Links Column 2 */}
           <div className="flex flex-col gap-4">
-            <p className="font-bold text-xl md:text-2xl lg:text-3xl">
-              More Links
-            </p>
+            <p className="font-bold text-xl md:text-2xl ">More Links</p>
             <nav className="flex flex-col gap-2">
               {navLinks.slice(3).map(({ path, label }) => (
                 <Link
                   key={path}
                   to={path}
-                  className="text-[#F4F4F4] hover:text-white transition-colors text-sm md:text-base lg:text-[22px]"
+                  className="text-[#F4F4F4] hover:text-white transition-colors text-sm md:text-base "
                 >
                   {label}
                 </Link>
@@ -76,9 +74,7 @@ const Footer = () => {
 
           {/* Payment Partners */}
           <div className="flex flex-col gap-4">
-            <p className="font-bold text-xl md:text-2xl lg:text-3xl">
-              Payment Powered By
-            </p>
+            <p className="font-bold text-xl md:text-2xl ">Payment Powered By</p>
             <div className="flex flex-col gap-4">
               <img src={esewa} alt="eSewa" className="w-32 md:w-36" />
               <img
@@ -91,7 +87,7 @@ const Footer = () => {
         </div>
 
         {/* Contact Info */}
-        <div className="flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-between gap-4 md:gap-6 bg-[#FFFFFF33] py-4 px-4 md:px-6 lg:px-12 rounded-2xl text-sm md:text-base lg:text-[22px]">
+        <div className="flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap justify-between gap-4 md:gap-6 bg-[#FFFFFF33] py-4 px-4 md:px-6 lg:px-12 rounded-2xl text-sm md:text-base ">
           <div className="flex items-center gap-2">
             <Phone className="w-5 h-5 flex-shrink-0" />
             <span>9851344071 | 9806393939</span>
