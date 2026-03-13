@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import courses from "../../components/courses.js";
+import React, { useContext, useState } from "react";
 import CourseCard from "../../components/CourseCard.jsx";
+import { CourseContext } from "../../context/CourseProviderProvider.jsx";
 
 const Courses = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -8,7 +8,10 @@ const Courses = () => {
   const [sortType, setSortType] = useState("");
 
   // 🔹 Filter + Search + Sort logic
-  const filteredCourses = courses
+  const { courses } = useContext(CourseContext);
+
+  console.log(courses)
+  const filteredCourses = courses?.courses || []
     .filter((course) => {
       const matchesCategory =
         activeCategory === "ALL" || course.category === activeCategory;
@@ -87,7 +90,7 @@ const Courses = () => {
           <div className=" flex justify-center gap-20 flex-wrap">
             {filteredCourses.length > 0 ? (
               filteredCourses.map((course) => (
-                <CourseCard key={course.id} course={course} />
+                <CourseCard key={course._id} course={course} />
               ))
             ) : (
               <p className="text-gray-500 col-span-full text-center">
